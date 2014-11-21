@@ -1,30 +1,15 @@
-
-var template = require('../views/template-main');
-var test_data = require('../model/test-data');
+var base = require('./base-controller')
+var util = require('util')
 
  
 
 exports.get = function(req, res) {
 
- var teamlist = test_data.teamlist;
-
- var strTeam = "", i = 0;
-
- for (i = 0; i<teamlist.count;) {
-
- strTeam = strTeam + "<li>" + teamlist.teams[i].country + "</li>";
-
- i = i+1;
-
- }
-
- strTeam = "<ul>" + strTeam + "</ul>"
-
  res.writeHead(200, {'Content-Type': 'text/html'});
-
- res.write(
-
- template.build("Test web page on node.js","Hello there","<p>The teams in Group " + teamlist.GroupName + " for Euro 2012 are:</p>" + strTeam));
+ console.log(util.inspect(base))
+ console.log(__dirname)
+ //console.log("This is the result: "+ result);
+ res.write(base.template.build(__dirname+"/../views/view.jade") );
 
  res.end();
 
