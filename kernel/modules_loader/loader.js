@@ -5,5 +5,6 @@ module.exports = function(enabledModules)
 
 module.exports.prototype.loadAll = function()
 {
+	// Load all modules based upon the enabled modules array
   require('../../apps/example/controllers/example');
 };

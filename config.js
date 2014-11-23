@@ -1,11 +1,8 @@
-var config = {};
-config.server = 'localhost';
-config.port = 9999;
+var config = {}
+config.server = 'localhost'
+config.port = 8080
 config.apps_folder = 'apps';
-config.default_protocol = 'http';
-// config.enabledModules = {'andres_app'}
-config.enabledModules = {'example/controllers/example'}
+config.default_protocol = 'http'
+config.enabledModules = [ 'example/controllers/example' ]
 exports.config = config;
 
-
-// exports.port = 9999;

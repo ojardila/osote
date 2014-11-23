@@ -6,11 +6,12 @@ var ResponseDispatcher = require('./routing/response_dispatcher');
 var util = require('util');
 
 var server = http.createServer(function (req, res) {
-  res.write("It works!!");
+ 
   var modules_loader = new ModulesLoader(confs.config.enabledModules);
   modules_loader.loadAll();
   var routing_params =  new Routing(req);
   var dispatcher = new ResponseDispatcher(req, res, routing_params);
+  dispatcher()
   res.end();
 }).listen(confs.config.port,confs.config.host);
 
